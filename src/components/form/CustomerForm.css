@@ -1,0 +1,45 @@
+.customer-form-container {
+  width: 300px;
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.customer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.customer-form input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.customer-form button {
+  width: 100%;
+  padding: 8px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.customer-form button:hover {
+  background-color: darkgreen;
+}
+
+h2 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 20px;
+}
