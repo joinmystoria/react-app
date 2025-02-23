@@ -7,9 +7,20 @@ const CustomerList = () => {
   const [customers, setCustomers] = useState([]);
 
   const fetchCustomers = async () => {
-    const data = await CustomerService.getCustomers();
-    setCustomers(data);
-  };
+    try {
+      const data = await CustomerService.getCustomers();
+      console.log("Fetched Customers:", data); // Debugging log
+      if (Array.isArray(data)) {
+        setCustomers(data);
+      } else {
+        console.error("Data is not an array:", data);
+        setCustomers([]); // Ensure it doesn't break the app
+      }
+    } catch (error) {
+      console.error("Error fetching customers:", error);
+      setCustomers([]); // Set empty array to prevent map() crash
+    }
+  };  
 
   useEffect(() => {
     fetchCustomers();
