@@ -1,0 +1,80 @@
+.name-form-container {
+  width: 320px; /* Reduced from 350px */
+  max-width: 90%; /* Ensures it remains responsive */
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.name-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Increased gap for better spacing */
+}
+
+.name-form input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box; /* Ensures padding doesn’t affect width */
+}
+
+.name-form input:last-of-type {
+  margin-bottom: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.name-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.name-form button:hover {
+  background-color: #45a049;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 480px) {
+  .name-form-container {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .name-form input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .name-form button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
