@@ -1,0 +1,152 @@
+/* Center the title */
+.name-list-container h2 {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Make the container flexible */
+.name-list-container {
+  width: 90%;
+  max-width: 800px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+/* Responsive Table */
+.name-table-container {
+  overflow-x: auto; /* Allows scrolling on small screens */
+}
+
+.name-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.name-table th,
+.name-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.name-table th {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+}
+
+.name-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.name-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* 🔹 Make table scrollable on small screens */
+@media screen and (max-width: 600px) {
+  .name-table-container {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .name-table th,
+  .name-table td {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+/* Fix action buttons alignment & spacing */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Adds spacing between buttons */
+}
+
+/* Edit & Delete Button */
+.edit-btn,
+.delete-btn,
+.save-btn,
+.cancel-btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Edit Button */
+.edit-btn {
+  background-color: #ffcc00;
+  color: black;
+}
+
+.edit-btn:hover {
+  background-color: #e6b800;
+}
+
+/* Delete Button */
+.delete-btn {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #cc0000;
+}
+
+/* Save Button */
+.save-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.save-btn:hover {
+  background-color: #45a049;
+}
+
+/* Cancel Button */
+.cancel-btn {
+  background-color: #ccc;
+  color: black;
+}
+
+.cancel-btn:hover {
+  background-color: #999;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 480px) {
+  .name-list-container {
+    width: 95%;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .edit-btn,
+  .delete-btn,
+  .save-btn,
+  .cancel-btn {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+}

@@ -1,10 +1,11 @@
 import React from "react";
-import CustomerList from "./components/list/CustomerList";
+import NameList from "./components/list/NameList";
+
 
 function App() {
   return (
     <div>
-      <CustomerList />
+      <NameList />
     </div>
   );
 }

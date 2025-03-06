@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import CustomerService from "../../services/CustomerService";
-import "./CustomerForm.css";
+import NameService from "../../services/NameService";
+import "./NameForm.css";
 
-const CustomerForm = ({ refreshCustomers }) => {
+const NameForm = ({ refreshName }) => {
   const [formData, setFormData] = useState({ first_name: "", last_name: "" });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -11,15 +12,19 @@ const CustomerForm = ({ refreshCustomers }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await CustomerService.addCustomer(formData);
-    setFormData({ first_name: "", last_name: "" });
-    refreshCustomers(); // Refresh customer list after adding
+    setLoading(true);
+
+    await NameService.addName(formData);
+    setFormData({ first_name: "", last_name: "" }); // Reset form
+    await refreshName(); // Refresh name list
+
+    setLoading(false);
   };
 
   return (
-    <div className="customer-form-container">
-      <h2>Add Customer</h2>
-      <form onSubmit={handleSubmit} className="customer-form">
+    <div className="name-form-container">
+      <h2>Add Name</h2>
+      <form onSubmit={handleSubmit} className="name-form">
         <input
           type="text"
           name="first_name"
@@ -36,10 +41,14 @@ const CustomerForm = ({ refreshCustomers }) => {
           onChange={handleChange}
           required
         />
-        <button type="submit">Add Customer</button>
+        <div className="button-container">
+          <button type="submit" disabled={loading}>
+            {loading ? "Adding..." : "Add Name"}
+          </button>
+        </div>
       </form>
     </div>
   );
 };
 
-export default CustomerForm;
+export default NameForm;
